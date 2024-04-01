@@ -22,12 +22,12 @@ public class Position {
 	}
 
 
-	public int getCollum() {
+	public int getCollumn() {
 		return collum;
 	}
 
 
-	public void setCollum(int collum) {
+	public void setCollumn(int collum) {
 		this.collum = collum;
 	}	
 	

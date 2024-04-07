@@ -24,7 +24,7 @@ public class ChessMatch {
 			for (int j=0; j<board.getCollumns(); j++) {
 				mat[i][j] = (ChessPiece) board.piece(i, j);
 				// Converte as peças genéricas em peças de xadrez
-			}
+			} 
 		}
 		// Retorna a matriz de peças
 		return mat;

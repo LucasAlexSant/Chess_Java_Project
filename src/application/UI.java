@@ -1,6 +1,10 @@
 package application;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 import chess.ChessPiece;
+import chess.ChessPosition;
 import chess.Color;
 
 //Classe responsável por exibir o tabuleiro do jogo de xadrez no console
@@ -27,6 +31,18 @@ public class UI {
 	public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
 	public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 
+	public static ChessPosition readChessPosition(Scanner sc) {
+		try	{
+		String s = sc.nextLine();
+		char collumn = s.charAt(0);
+		int row = Integer.parseInt(s.substring(1));
+		return new ChessPosition(collumn, row);
+		}
+		catch (RuntimeException e) {
+			throw new InputMismatchException("error reading ChessPosition. Valid values are from a1 to h8.");
+		}
+	}
+	
 	// Método estático para imprimir o tabuleiro com as peças de xadrez
 	public static void printBoard(ChessPiece[][] pieces) {
 

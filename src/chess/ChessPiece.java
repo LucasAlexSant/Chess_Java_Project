@@ -2,6 +2,7 @@ package chess;
 
 import boardgame.Board;
 import boardgame.Piece;
+import boardgame.Position;
 
 //Classe que representa uma peça de xadrez, que é uma extensão da classe Piece
 public abstract class ChessPiece extends Piece{
@@ -18,5 +19,9 @@ public abstract class ChessPiece extends Piece{
 		return color;
 	}
 	
+	protected boolean isThereOpponentPiece(Position position) {
+		ChessPiece p = (ChessPiece)getBoard().piece(position);
+		return p != null && p.getColor() != color;
+	}
 	
 }
